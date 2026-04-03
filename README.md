@@ -1,21 +1,34 @@
-# SPSC_David – Lock-Free Ring Buffer in C
+SPSC_David – Lock-Free Ring Buffer in C
 
-This is my personal playground for building low-latency, lock-free queues and timing infrastructure in C.
+This repository is my personal lab for building and measuring low-latency, lock-free data structures in C.
 
-## What this does
+What this does
+Lock-free single-producer / single-consumer ring buffer (spsc_ring_buffer.h)
+Custom timing stack (lt_platform, lt_timer) with calibrated TSC
+Microbenchmarks measuring end-to-end latency at the nanosecond level
+Current Results
 
-- Lock-free single-producer/single-consumer ring buffer (`spsc_ring_buffer.h)
-- Custom timing stack (`lt_platform` / `lt_timer`) that calibrates TSC
-- Microbenchmarks that measure end-to-end latency in nanoseconds
+On a modern x86_64 core (hot-cache conditions, single producer/consumer):
 
-## Current results
+~3.6 billion enqueue/dequeue operations over 90 seconds
+≈ 40 million operations/sec
+≈ 25 ns per operation
+Measurement Notes
+TSC calibrated at startup
+Measurements taken under hot-cache conditions
+Single-core, SPSC workload (no cross-core contention yet)
+Focus is on consistency and reasoning, not peak benchmark tuning
+Why I built this
 
-On a modern x86_64 core (hot-cache conditions):
+I work full-time in carpentry and low-voltage systems (audio/video, electrical, plumbing).
+Over the past year, I’ve been teaching myself C and systems programming in small windows around long days on job sites.
 
-- ~3.6B enqueue/dequeue operations over a 90-second run  
-- ≈ 40M ops/sec  
-- ≈ 25ns per operation
+This project tracks that progression:
 
-## Why I built this
+from basic C
+to understanding atomics and memory ordering
+to reasoning about latency at the cycle level
 
-I work full-time in carpentry and low-voltage (audio/video, electrical, plumbing “mechanicals”), and I’ve been teaching myself C and low-latency systems in 30-minute windows around long days on job sites. This repo tracks that journey from my first “hello world” to treating C as a low-voltage system and trying to understand where every nanosecond goes.
+I approach C the same way I approach physical systems:
+
+load paths, failure points, and where energy (or time) is lost
