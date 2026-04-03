@@ -32,3 +32,5 @@ to reasoning about latency at the cycle level
 I approach C the same way I approach physical systems:
 
 load paths, failure points, and where energy (or time) is lost
+"I spent the last year in a 'lonely' lab learning MOESI/MESI because I wanted to understand the load paths of the CPU. 
+I've built a 7,000-line library from scratch, and I can whiteboard the physics of an SPSC handoff at 40 million ops/sec."
