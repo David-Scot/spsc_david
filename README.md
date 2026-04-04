@@ -4,7 +4,7 @@ This repository is my personal lab for building and measuring low-latency, lock-
 
 What this does
 Lock-free single-producer / single-consumer ring buffer (spsc_ring_buffer.h)
-Custom timing stack (lt_platform, lt_timer) with calibrated TSC
+Custom timing stack with calibrated TSC
 Microbenchmarks measuring end-to-end latency at the nanosecond level
 Current Results
 
