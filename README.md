@@ -35,6 +35,6 @@ load paths, failure points, and where energy (or time) is lost
 "I spent the last year in a 'lonely' lab learning MOESI/MESI because I wanted to understand the load paths of the CPU. 
 I've built a 7,000-line library from scratch, and I can whiteboard the physics of an SPSC handoff at 40 million ops/sec."
 
-The Builder’s Perspective: > "I approach a CPU the way I approach a high-end framing project. 
+The Builder’s carpneter's Perspective: > "I approach a CPU the way I approach a high-end framing project. 
 I look for the load-bearing members (the memory bus), the friction points (cache misses), and the structural integrity (atomic guarantees). 
 40 million ops/sec isn't just a number; it’s the result of ensuring the 'grain' of the silicon is aligned with the flow of the data."
