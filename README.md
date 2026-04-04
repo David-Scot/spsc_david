@@ -38,3 +38,9 @@ I've built a 7,000-line library from scratch, and I can whiteboard the physics o
 The Builder’s carpneter's Perspective: > "I approach a CPU the way I approach a high-end framing project. 
 I look for the load-bearing members (the memory bus), the friction points (cache misses), and the structural integrity (atomic guarantees). 
 40 million ops/sec isn't just a number; it’s the result of ensuring the 'grain' of the silicon is aligned with the flow of the data."
+
+“When I read code, I try to understand the system from its structure first — how data flows, 
+where memory is touched, and how synchronization is handled — before focusing on individual lines.
+I’ve spent a lot of time building low-level components in C, like ring buffers and metrics systems,
+so I naturally think in terms of cache behavior, atomics, and pressure points.
+My goal is always to reason about what the system is doing and where it might break or slow down.”
