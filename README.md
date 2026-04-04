@@ -34,7 +34,7 @@ This project reflects that progression:
 - From basic C syntax to reasoning about atomics and memory ordering
 - From "writing code" to understanding latency at the cycle level
 
-> "I spent the last year in a quiet lab learning MOESI/MESI to understand the load paths of the CPU. I built a 7,000-line library from scratch and can whiteboard the physics of an SPSC handoff at 40 million ops/sec."
+> "I spent the last year in a quiet lab learning TSO / MOESI/MESI to understand the load paths of the CPU. I built a 7,000-line library from scratch and can whiteboard the physics of an SPSC handoff at 40 million ops/sec."
 
 ---
 
