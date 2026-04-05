@@ -1,32 +1,23 @@
-# SPSC_David – Lock-Free Ring Buffer in C
+SPSC_David – Lock-Free Ring Buffer in C
 
-This repository is my personal lab for exploring and measuring low-latency, lock-free data structures in C.
+This repository is a personal project focused on building and measuring low-latency, lock-free data structures in C.
 
----
+Overview
+Lock-free single-producer/single-consumer (SPSC) ring buffer (spsc_ring_buffer.h)
+Custom timing harness using calibrated TSC
+Microbenchmarks measuring throughput and propagation latency
+Results
 
-## What It Does
-- Lock-free single-producer/single-consumer ring buffer (`spsc_ring_buffer.h`)
-- Custom timing stack with calibrated TSC
-- Microbenchmarks measuring end-to-end latency at the nanosecond level
+Tested on a modern x86_64 CPU under controlled conditions (hot cache, pinned threads, single producer/consumer):
 
----
-
-## Current Results
-Tested on a modern x86_64 core (hot-cache conditions, single producer/consumer):
-
-- ~3.6 billion enqueue/dequeue operations over 90 seconds
-- ≈ 40 million operations/sec
-- ≈ 25 ns per operation
-
----
-
-## Measurement Notes
-- TSC calibrated at startup
-- Hot-cache, single-core, SPSC workload (no cross-core contention)
-- Focus on consistency and reasoning, not peak benchmark tuning
-
----
-
+~3.6 billion operations over 90 seconds
+~40 million operations/sec
+~25 ns per enqueue/dequeue pair
+Measurement Notes
+TSC calibrated at startup
+Measurements taken under hot-cache conditions
+Single-core SPSC workload (no cross-core contention)
+Focus on consistency and reproducibility over peak tuning
 ## Why I Built This
 I work full-time in carpentry and low-voltage systems (audio/video, electrical, plumbing). Over the past year, I've been teaching myself C and systems programming in small windows around long days on job sites.
 
@@ -38,4 +29,4 @@ This project reflects that progression:
 ---
 
 ## The Builder's Perspective
-> "I approach a CPU the way I approach a high-end framing project. I look for the load-bearing members (the memory bus), the friction points (cache misses), and the structural integrity (atomic guarantees). 40 million ops/sec isn't just a number — it's the result of aligning the grain of the silicon with the flow of data."
+> "I approach a CPU the way I approach a high-end framing project. I look for the load-bearing members (the memory bus), the friction points (cache misses), and the structural integrity (atomic guarantees). 40 million ops/sec isn't just a number — it's the result of aligning the flow of data."
